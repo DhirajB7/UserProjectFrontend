@@ -1,3 +1,31 @@
 .App {
   text-align: center;
 }
+.navbar-dark .navbar-nav .nav-link .orange {
+  color: #f29f0f;
+}
+
+.nav-item {
+  margin-left: 25px;
+}
+
+.white {
+  color: white;
+}
+
+.sort,
+.searchIcon {
+  cursor: pointer;
+}
+
+.Users {
+  margin-left: 9%;
+}
+
+.addUser,
+.addUser:hover {
+  background-color: #f29f0f;
+  color: white;
+  margin-left: 30px;
+  margin-right: 30px;
+}
