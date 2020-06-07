@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import GetAllUsers from "../API/GetAllUsers";
 import UserRow from "./UserRow";
 import Spinner from "./Spinner";
+import GetAllUsersDec from "../API/GetAllUsersDec";
 
-class UserRows extends Component {
+class UserRowsReverse extends Component {
   state = {
     userData: [],
   };
 
-  properDataSorting = () => {
-    GetAllUsers().then((a) => {
+  reverseDataSorting = () => {
+    GetAllUsersDec().then((a) => {
       let userDataArray = a
         .toString()
         .replace("[", "")
@@ -25,7 +25,7 @@ class UserRows extends Component {
   };
 
   componentDidMount() {
-    this.properDataSorting();
+    this.reverseDataSorting();
   }
 
   render() {
@@ -43,4 +43,4 @@ class UserRows extends Component {
   }
 }
 
-export default UserRows;
+export default UserRowsReverse;

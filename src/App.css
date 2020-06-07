@@ -1,6 +1,7 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
+
 .navbar-dark .navbar-nav .nav-link .orange {
   color: #f29f0f;
 }
@@ -18,10 +19,6 @@
   cursor: pointer;
 }
 
-.Users {
-  margin-left: 9%;
-}
-
 .addUser,
 .addUser:hover {
   background-color: #f29f0f;
@@ -31,8 +28,8 @@
 }
 
 .bigButton {
-  padding-left: 16%;
-  padding-right: 16%;
+  padding-left: 32%;
+  padding-right: 36%;
 }
 
 .inlineRadio1 {

@@ -9,7 +9,7 @@ class UserBar extends Component {
     return (
       <React.Fragment>
         <nav className="navbar navbar-expand-lg navbar-white bg-white">
-          <div className="navbar-brand Users">
+          <div className="navbar-brand ">
             <img src={users} alt="users" /> Users
           </div>
 
