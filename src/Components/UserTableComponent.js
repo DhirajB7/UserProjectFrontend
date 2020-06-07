@@ -29,6 +29,7 @@ class UserTableComponent extends Component {
             <th scope="col">ROLE TYPE</th>
             <th scope="col">STATUS</th>
             <th scope="col"> </th>
+            <th scope="col"> </th>
           </tr>
         </thead>
         <tbody>{this.state.odr ? <UserRows /> : <UserRowsReverse />}</tbody>

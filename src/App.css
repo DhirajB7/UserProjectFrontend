@@ -15,7 +15,8 @@
 }
 
 .sort,
-.searchIcon {
+.searchIcon,
+.del {
   cursor: pointer;
 }
 
@@ -34,4 +35,8 @@
 
 .inlineRadio1 {
   padding-right: 34%;
+}
+
+.del {
+  color: gray;
 }

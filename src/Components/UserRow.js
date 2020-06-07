@@ -3,6 +3,7 @@ import edit from "../assets/ico_edit.svg";
 import active from "../assets/ico_active.svg";
 import inactive from "../assets/ico_inactive.svg";
 import pending from "../assets/ico_pending.svg";
+import DeleteUser from "../API/DeleteUser";
 
 function UserRow(props) {
   //console.log(props.obj._id);
@@ -31,6 +32,20 @@ function UserRow(props) {
 
       <td>
         <img className="sort" src={edit} alt="edit" />
+      </td>
+
+      <td>
+        <i
+          className="fas fa-trash-alt del"
+          onClick={() => {
+            let value = window.confirm(
+              "Are You sure you want to delete user " + props.obj.name + " ? "
+            );
+            if (value) {
+              DeleteUser(props.obj._id);
+            }
+          }}
+        />
       </td>
     </tr>
   );

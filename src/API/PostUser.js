@@ -1,6 +1,6 @@
 import { baseURL } from "./Properties";
 
-function PostUser(name, email, role, phone) {
+async function PostUser(name, email, role, phone) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -19,7 +19,7 @@ function PostUser(name, email, role, phone) {
     redirect: "follow",
   };
 
-  fetch(baseURL + "/user", requestOptions)
+  await fetch(baseURL + "/user", requestOptions)
     .then((response) => response.text())
     .then((result) => {
       alert(result);
