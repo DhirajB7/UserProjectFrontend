@@ -5,21 +5,9 @@ import search from "../assets/ico_search.svg";
 import AddUser from "./AddUser";
 
 class UserBar extends Component {
-  state = {
-    modalIsOpen: false,
-  };
-
-  addUserClicked = () => {
-    this.setState({
-      modalIsOpen: true,
-    });
-  };
-
   render() {
     return (
       <React.Fragment>
-        <AddUser value={this.state.modalIsOpen} />
-
         <nav className="navbar navbar-expand-lg navbar-white bg-white">
           <div className="navbar-brand Users">
             <img src={users} alt="users" /> Users
@@ -40,13 +28,16 @@ class UserBar extends Component {
 
               <button
                 className="btn btn-outline-warning my-2 my-sm-0 addUser"
-                onClick={this.addUserClicked}
+                data-toggle="modal"
+                data-target="#exampleModalCenter"
               >
                 <img src={add} alt="add" /> Add User
               </button>
             </div>
           </div>
         </nav>
+
+        <AddUser />
       </React.Fragment>
     );
   }
