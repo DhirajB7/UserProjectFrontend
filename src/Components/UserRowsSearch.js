@@ -28,7 +28,7 @@ class UserRowsSearch extends Component {
   }
 
   render() {
-    if (this.state.userData.length > 1) {
+    if (this.state.userData.length > 0) {
       return (
         <React.Fragment>
           {this.state.userData.map((a) => {

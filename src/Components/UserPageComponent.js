@@ -11,7 +11,7 @@ class UserPageComponent extends Component {
 
   getData = (data) => {
     Search(data).then((a) => {
-      if (a.includes("},")) {
+      if (a.includes("}]")) {
         this.setState({
           didSearchHappen: true,
           sw: data,
