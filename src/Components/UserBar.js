@@ -5,6 +5,22 @@ import search from "../assets/ico_search.svg";
 import AddUser from "./AddUser";
 
 class UserBar extends Component {
+  state = {
+    searchText: "",
+  };
+
+  searchChanged = (event) => {
+    this.setState({
+      searchText: event.target.value,
+    });
+  };
+
+  searchClicked = () => {
+    if (this.state.searchText.trim().length > 0) {
+      this.props.sendData(this.state.searchText);
+    }
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -22,9 +38,16 @@ class UserBar extends Component {
                 placeholder="Search"
                 aria-label="Search"
                 aria-describedby="basic-addon2"
+                value={this.state.searchText}
+                onChange={this.searchChanged}
               />
 
-              <img className="searchIcon" src={search} alt="search" />
+              <img
+                className="searchIcon"
+                src={search}
+                alt="search"
+                onClick={this.searchClicked}
+              />
 
               <button
                 className="btn btn-outline-warning my-2 my-sm-0 addUser"

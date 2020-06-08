@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import uparrow from "../assets/ico_sorting.svg";
 import UserRows from "./UserRows";
 import UserRowsReverse from "./UserRowsReverse";
+import UserRowsSearch from "./UserRowsSearch";
 
 class UserTableComponent extends Component {
   state = {
@@ -21,8 +22,10 @@ class UserTableComponent extends Component {
           <tr>
             <th scope="col">
               <div className="sort">
-                NAME &nbsp;
-                <img src={uparrow} alt="sort" onClick={this.sortClicked} />
+                NAME &nbsp;{" "}
+                {this.props.search ? null : (
+                  <img src={uparrow} alt="sort" onClick={this.sortClicked} />
+                )}
               </div>
             </th>
             <th scope="col">EMAIL</th>
@@ -32,7 +35,14 @@ class UserTableComponent extends Component {
             <th scope="col"> </th>
           </tr>
         </thead>
-        <tbody>{this.state.odr ? <UserRows /> : <UserRowsReverse />}</tbody>
+        {this.props.search ? (
+          <tbody>
+            {" "}
+            <UserRowsSearch word={this.props.searchWord} />
+          </tbody>
+        ) : (
+          <tbody>{this.state.odr ? <UserRows /> : <UserRowsReverse />}</tbody>
+        )}
       </table>
     );
   }
